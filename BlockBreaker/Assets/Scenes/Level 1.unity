@@ -2573,6 +2573,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lose Collider
       objectReference: {fileID: 0}
+    - target: {fileID: 4221854456938237748, guid: e46b1b1f32f0aa24d919be80cba40d7a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221854456938237748, guid: e46b1b1f32f0aa24d919be80cba40d7a,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e46b1b1f32f0aa24d919be80cba40d7a, type: 3}
 --- !u!1001 &4873975416918341014

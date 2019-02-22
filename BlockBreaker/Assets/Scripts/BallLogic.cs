@@ -48,4 +48,18 @@ public class BallLogic : MonoBehaviour
         Vector3 ballPos = paddlePos + ballVector;
         transform.position = ballPos;
     }
+
+    // Play audio when hitting collider
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (ballInPlay)
+        {
+            GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            // DO NOTHING
+        }
+
+    }
 }
