@@ -262,6 +262,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paddle1: {fileID: 4221854456840487402}
   yLaunchVector: 20
+  ballSFX:
+  - {fileID: 8300000, guid: 6d6fb215448a5a449ad0c83b71575560, type: 3}
+  - {fileID: 8300000, guid: 55df8680423857144a39792a66d416d1, type: 3}
+  - {fileID: 8300000, guid: 6021c9c12c8a810478dca4e875245de5, type: 3}
 --- !u!82 &6823764529664486647
 AudioSource:
   m_ObjectHideFlags: 0
