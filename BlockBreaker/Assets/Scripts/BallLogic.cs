@@ -5,7 +5,11 @@ public class BallLogic : MonoBehaviour
     // Define Variables
     [SerializeField] PlayerController paddle1;
     [SerializeField] float yLaunchVector = 10f;
+    [SerializeField] AudioClip[] ballSFX;
 
+    // Cached Objects
+    AudioSource audioSource;
+    
     // States
     Vector3 ballVector;
     bool ballInPlay = false;
@@ -14,6 +18,7 @@ public class BallLogic : MonoBehaviour
     void Start()
     {
         ballVector = transform.position - paddle1.transform.position;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -49,17 +54,24 @@ public class BallLogic : MonoBehaviour
         transform.position = ballPos;
     }
 
-    // Play audio when hitting collider
+    // Detect collision with Collider
     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        PlayBallSFX();
+
+    }
+
+    // Play audio. Triggered when hitting Collider
+    private void PlayBallSFX()
     {
         if (ballInPlay)
         {
-            GetComponent<AudioSource>().Play();
+            AudioClip clip = ballSFX[Random.Range(0, ballSFX.Length)];
+            audioSource.PlayOneShot(clip);
         }
         else
         {
             // DO NOTHING
         }
-
     }
 }

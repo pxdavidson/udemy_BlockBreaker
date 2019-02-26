@@ -2583,6 +2583,41 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4221854456938237750, guid: e46b1b1f32f0aa24d919be80cba40d7a,
+        type: 3}
+      propertyPath: ballSFX.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221854456938237750, guid: e46b1b1f32f0aa24d919be80cba40d7a,
+        type: 3}
+      propertyPath: ballSFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 52d343efac823594bbf5629d5615fe0b, type: 3}
+    - target: {fileID: 4221854456938237750, guid: e46b1b1f32f0aa24d919be80cba40d7a,
+        type: 3}
+      propertyPath: ballSFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d6fb215448a5a449ad0c83b71575560, type: 3}
+    - target: {fileID: 4221854456938237750, guid: e46b1b1f32f0aa24d919be80cba40d7a,
+        type: 3}
+      propertyPath: ballSFX.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 55df8680423857144a39792a66d416d1, type: 3}
+    - target: {fileID: 4221854456938237750, guid: e46b1b1f32f0aa24d919be80cba40d7a,
+        type: 3}
+      propertyPath: ballSFX.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6021c9c12c8a810478dca4e875245de5, type: 3}
+    - target: {fileID: 4221854456938237750, guid: e46b1b1f32f0aa24d919be80cba40d7a,
+        type: 3}
+      propertyPath: ballSFX.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 70c416cd8219b784492d453f0138b815, type: 3}
+    - target: {fileID: 6823764529664486647, guid: e46b1b1f32f0aa24d919be80cba40d7a,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 52d343efac823594bbf5629d5615fe0b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e46b1b1f32f0aa24d919be80cba40d7a, type: 3}
 --- !u!1001 &4873975416918341014
