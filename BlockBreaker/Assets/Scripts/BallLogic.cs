@@ -7,7 +7,7 @@ public class BallLogic : MonoBehaviour
     [SerializeField] float yLaunchVector = 10f;
     [SerializeField] AudioClip[] ballSFX;
 
-    // Cached Objects
+    // Cache
     AudioSource audioSource;
     
     // States

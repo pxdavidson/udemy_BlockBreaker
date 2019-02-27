@@ -6,7 +6,17 @@ public class BlockLogic : MonoBehaviour
     // Define Variables
     [SerializeField] AudioClip blockSFX;
 
-    // detect Collisio with Colliders
+    // Cache
+    LevelManager levelManager;
+
+    // Start is called before the first frame update
+    private void Start()
+    {
+        levelManager = FindObjectOfType<LevelManager>();
+        levelManager.IncrementBlocksRemaining();
+    }
+
+    // Detect collision with Colliders
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayBlockSFX();
@@ -23,5 +33,6 @@ public class BlockLogic : MonoBehaviour
     private void Destroy()
     {
         Destroy(gameObject);
+        levelManager.BlockDestroyed();
     }
 }

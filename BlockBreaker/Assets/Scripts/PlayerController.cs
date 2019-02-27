@@ -9,18 +9,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float paddlePosXMin = 1f;
     [SerializeField] float paddlePosXMax = 15f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         PaddleControl();
     }
 
+    // Moves paddle based on location of the mouse
     private void PaddleControl()
     {
         float xMousePosInUnits = (Input.mousePosition.x / Screen.width * wolrdUnitScreenSize);
