@@ -27,12 +27,11 @@ public class LevelManager : MonoBehaviour
     public void BlockDestroyed()
     {
         blocksRemaining = (blocksRemaining - 1);
-        Debug.Log(blocksRemaining);
-        WinCondition();
+        CheckWinCondition();
     }
 
     // Check win condition
-    private void WinCondition()
+    private void CheckWinCondition()
     {
         if (blocksRemaining <= 0)
         {

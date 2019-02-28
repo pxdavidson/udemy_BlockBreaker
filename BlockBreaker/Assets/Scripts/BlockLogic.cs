@@ -20,7 +20,7 @@ public class BlockLogic : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayBlockSFX();
-        Destroy();
+        DestroyBlock();
     }
 
     // Plays the blockSFX. Triggered by collision
@@ -30,7 +30,7 @@ public class BlockLogic : MonoBehaviour
     }
 
     // Destroy GameObject
-    private void Destroy()
+    private void DestroyBlock()
     {
         Destroy(gameObject);
         levelManager.BlockDestroyed();
