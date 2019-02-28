@@ -5,15 +5,18 @@ public class BlockLogic : MonoBehaviour
 { 
     // Define Variables
     [SerializeField] AudioClip blockSFX;
+    [SerializeField] int blockScore = 10;
 
     // Cache
     LevelManager levelManager;
+    ScoreLogic scoreLogic;
 
     // Start is called before the first frame update
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
         levelManager.IncrementBlocksRemaining();
+        scoreLogic = FindObjectOfType<ScoreLogic>();
     }
 
     // Detect collision with Colliders
@@ -32,7 +35,8 @@ public class BlockLogic : MonoBehaviour
     // Destroy GameObject
     private void DestroyBlock()
     {
-        Destroy(gameObject);
+        scoreLogic.UpdateScoreBoard(blockScore);
         levelManager.BlockDestroyed();
+        Destroy(gameObject);
     }
 }
