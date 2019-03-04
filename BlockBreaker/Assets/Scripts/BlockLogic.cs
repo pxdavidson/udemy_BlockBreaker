@@ -15,8 +15,8 @@ public class BlockLogic : MonoBehaviour
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
-        levelManager.IncrementBlocksRemaining();
         scoreLogic = FindObjectOfType<ScoreLogic>();
+        levelManager.IncrementBlocksRemaining();
     }
 
     // Detect collision with Colliders

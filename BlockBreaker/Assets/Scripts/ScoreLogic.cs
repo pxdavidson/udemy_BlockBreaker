@@ -4,13 +4,27 @@ using UnityEngine.UI;
 public class ScoreLogic : MonoBehaviour
 {
     // Define variables
-    Text scoreText;
+    [SerializeField] Text scoreText;
     int currentScore = 0;
+
+    // Count number of ScoreLogic scripts and destroy if multiple.
+    private void Awake()
+    {
+        int countScoreLogic = FindObjectsOfType<ScoreLogic>().Length;
+        if (countScoreLogic > 1)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        scoreText = GetComponent<Text>();
         scoreText.text = currentScore.ToString();
     }
 
