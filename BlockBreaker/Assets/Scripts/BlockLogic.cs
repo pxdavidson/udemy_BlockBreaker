@@ -5,6 +5,7 @@ public class BlockLogic : MonoBehaviour
 { 
     // Define Variables
     [SerializeField] AudioClip blockSFX;
+    [SerializeField] GameObject blockVFX;
     [SerializeField] int blockScore = 10;
 
     // Cache
@@ -37,6 +38,13 @@ public class BlockLogic : MonoBehaviour
     {
         scoreLogic.UpdateScoreBoard(blockScore);
         levelManager.BlockDestroyed();
+        PlayBlockVFX();
         Destroy(gameObject);
+    }
+
+    private void PlayBlockVFX()
+    {
+        GameObject blockVFXInstance = Instantiate(blockVFX, transform.position, transform.rotation);
+        Destroy(blockVFXInstance, 1f);
     }
 }

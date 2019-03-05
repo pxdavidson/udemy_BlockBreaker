@@ -120,3 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockSFX: {fileID: 8300000, guid: 70c416cd8219b784492d453f0138b815, type: 3}
+  blockVFX: {fileID: 8144306292994680077, guid: 2f41828f852fbd74aa177729949c1ecb,
+    type: 3}
+  blockScore: 10

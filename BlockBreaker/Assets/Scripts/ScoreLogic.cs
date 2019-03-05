@@ -13,13 +13,18 @@ public class ScoreLogic : MonoBehaviour
         int countScoreLogic = FindObjectsOfType<ScoreLogic>().Length;
         if (countScoreLogic > 1)
         {
-            gameObject.SetActive(false);
-            Destroy(gameObject);
+            DestroyGameObject();
         }
         else
         {
             DontDestroyOnLoad(gameObject);
         }
+    }
+
+    public void DestroyGameObject()
+    {
+        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     // Start is called before the first frame update
