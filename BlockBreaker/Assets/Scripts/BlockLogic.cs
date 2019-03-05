@@ -15,16 +15,40 @@ public class BlockLogic : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        PopulateCache();
+        CountBreakableBlocks();
+    }
+
+    private void PopulateCache()
+    {
         levelManager = FindObjectOfType<LevelManager>();
         scoreLogic = FindObjectOfType<ScoreLogic>();
-        levelManager.IncrementBlocksRemaining();
+    }
+
+    private void CountBreakableBlocks()
+    {
+        if (tag == "Breakable")
+        {
+            levelManager.IncrementBlocksRemaining();
+        }
+        else
+        {
+            // Do nothing
+        }
     }
 
     // Detect collision with Colliders
     private void OnCollisionEnter2D(Collision2D collision)
     {
         PlayBlockSFX();
-        DestroyBlock();
+        if (tag == "Breakable")
+        {
+            DestroyBlock();
+        }
+        else
+        {
+            // Do nothing
+        }
     }
 
     // Plays the blockSFX. Triggered by collision
