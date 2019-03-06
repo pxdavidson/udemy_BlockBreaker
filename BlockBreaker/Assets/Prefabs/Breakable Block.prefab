@@ -123,3 +123,7 @@ MonoBehaviour:
   blockVFX: {fileID: 8144306292994680077, guid: 2f41828f852fbd74aa177729949c1ecb,
     type: 3}
   blockScore: 10
+  blockHP: 3
+  hitSprites:
+  - {fileID: 21300000, guid: 4e4e229249f48104bbae553cb08f0651, type: 3}
+  - {fileID: 21300000, guid: 7e729560271946841b30a2fa9aa241bf, type: 3}

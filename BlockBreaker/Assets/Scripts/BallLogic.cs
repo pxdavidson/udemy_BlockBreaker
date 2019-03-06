@@ -36,7 +36,7 @@ public class BallLogic : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            float xLaunchVector = Random.Range(-2f, 2f);
+            float xLaunchVector = 0;
             GetComponent<Rigidbody2D>().velocity = new Vector2(xLaunchVector, yLaunchVector);
             ballInPlay = true;
         }

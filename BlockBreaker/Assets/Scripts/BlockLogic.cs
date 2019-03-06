@@ -7,6 +7,9 @@ public class BlockLogic : MonoBehaviour
     [SerializeField] AudioClip blockSFX;
     [SerializeField] GameObject blockVFX;
     [SerializeField] int blockScore = 10;
+    [SerializeField] int blockHP = 3;
+    int hitsTaken = 0;
+    [SerializeField] Sprite[] hitSprites;
 
     // Cache
     LevelManager levelManager;
@@ -19,12 +22,14 @@ public class BlockLogic : MonoBehaviour
         CountBreakableBlocks();
     }
 
+    // Populate the cache at start
     private void PopulateCache()
     {
         levelManager = FindObjectOfType<LevelManager>();
         scoreLogic = FindObjectOfType<ScoreLogic>();
     }
 
+    // Count the breakable blocks
     private void CountBreakableBlocks()
     {
         if (tag == "Breakable")
@@ -43,11 +48,26 @@ public class BlockLogic : MonoBehaviour
         PlayBlockSFX();
         if (tag == "Breakable")
         {
-            DestroyBlock();
+            hitsTaken++;
+            CountHits();
         }
         else
         {
             // Do nothing
+        }
+    }
+
+    // Count the hits taken
+    private void CountHits()
+    {
+        if (hitsTaken == blockHP)
+        {
+            DestroyBlock();
+        }
+        else
+        {
+            int spriteIndex = hitsTaken - 1;
+            GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
         }
     }
 
