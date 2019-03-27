@@ -67,7 +67,14 @@ public class BlockLogic : MonoBehaviour
         else
         {
             int spriteIndex = hitsTaken - 1;
-            GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+            if (hitSprites[spriteIndex] != null)
+            {
+                GetComponent<SpriteRenderer>().sprite = hitSprites[spriteIndex];
+            }
+            else
+            {
+                Debug.Log("Missing sprite on " + gameObject.name);
+            }
         }
     }
 
